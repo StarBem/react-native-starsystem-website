@@ -1,6 +1,6 @@
-## React Native Elements website
+## React Native Star System website
 
-https://reactnativeelements.com/
+https://starsystem.starbem.app/react-native/
 
 ### Getting Started
 
