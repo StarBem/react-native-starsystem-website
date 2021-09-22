@@ -1,16 +1,16 @@
 export function platformMappingHandler(value) {
   const formattedString = value
-    .substring(value?.lastIndexOf('{') + 1, value?.lastIndexOf('}') - 1)
-    .replace(/ /g, '')
-    .replace(/\r\n/g, '');
-  const platforms = formattedString.split(',');
+    .substring(value?.lastIndexOf("{") + 1, value?.lastIndexOf("}") - 1)
+    .replace(/ /g, "")
+    .replace(/\r\n/g, "");
+  const platforms = formattedString.split(",");
 
-  const platformTypes = { ios: '', android: '', web: '' };
+  const platformTypes = { ios: "", android: "", web: "" };
 
   platforms.map((item) => {
-    if (item !== '') {
-      const [platform, type] = item.split(':');
-      if (platform !== 'default') {
+    if (item !== "") {
+      const [platform, type] = item.split(":");
+      if (platform !== "default") {
         platformTypes[platform] = type;
       } else {
         Object.keys(platformTypes).map((key) => {
@@ -23,7 +23,7 @@ export function platformMappingHandler(value) {
     .map((key) => {
       return `${platformTypes[key]}(${key})`;
     })
-    .join(',');
+    .join(",");
 
   return defaultValue;
 }

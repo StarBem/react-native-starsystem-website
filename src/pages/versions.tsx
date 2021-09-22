@@ -65,7 +65,7 @@ const ReleaseNotes: React.FunctionComponent<{ version: string }> = ({
   version,
 }) => (
   <a
-    href={`https://github.com/react-native-elements/react-native-elements/releases/tag/v${version}`}
+    href={`https://github.com/StarBem/react-native-starsystem/releases/tag/v${version}`}
     target="_blank"
   >
     Release Notes
@@ -170,7 +170,7 @@ const Versions: React.FunctionComponent<{}> = (props) => {
 
             <p>
               Here you can find documentation for previous versions of React
-              Native Elements.
+              Native Star System.
             </p>
 
             <table className="versions">

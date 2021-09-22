@@ -3,7 +3,7 @@ id: troubleshooting
 title: Troubleshooting
 ---
 
-Although we try to make the experience of using React Native Elements
+Although we try to make the experience of using React Native Star System
 hassle-free, time to time you may encounter some problems along the way.
 
 On this page you can find solutions to commonly encountered issues.
@@ -19,10 +19,10 @@ Spelling a component incorrectly though very simple, happens occasionally.
 
 ```
 // Incorrect
-import { Listitem } from 'react-native-elements'
+import { Listitem } from 'react-native-starsystem'
 
 // Correct
-import { ListItem } from 'react-native-elements'
+import { ListItem } from 'react-native-starsystem'
 ```
 
 ### Importing a component from the wrong version
@@ -39,7 +39,7 @@ available in `v1.0.0-beta1` and higher.
 
 To fix this, follow these steps:
 
-1. Check your `package.json` for the version of `react-native-elements` you are
+1. Check your `package.json` for the version of `react-native-starsystem` you are
    using.
 2. View the documentation for your particular version on the website. See
    available versions
@@ -57,7 +57,7 @@ you are using, is trying to use a font that is not bundled with the platform or
 is not added to the project.
 
 If you aren't using a custom font in your application, then it's likely that
-the error comes from React Native Elements looking for
+the error comes from React Native Star System looking for
 `react-native-vector-icons`.
 
 They're a couple ways to solve this depending on your setup.
@@ -76,11 +76,11 @@ They're a couple ways to solve this depending on your setup.
 rm -rf node_modules yarn.lock
 ```
 
-2. Install React Native Elements
+2. Install React Native Star System
 
 ```bash
 # yarn
-yarn && yarn add react-native-elements
+yarn && yarn add react-native-starsystem
 ```
 
 3. Install react-native-vector-icons
@@ -124,11 +124,11 @@ commands:
 rm -rf node_modules yarn.lock package-lock.json
 ```
 
-2. Install React Native Elements
+2. Install React Native Star System
 
 ```bash
 # yarn
-yarn && yarn add react-native-elements
+yarn && yarn add react-native-starsystem
 ```
 
 3. Install `@expo/vector-icons`

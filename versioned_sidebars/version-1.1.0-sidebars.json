@@ -101,17 +101,6 @@
     {
       "collapsed": true,
       "type": "category",
-      "label": "Universe Components",
-      "items": [
-        {
-          "type": "doc",
-          "id": "version-1.1.0/circularslider"
-        }
-      ]
-    },
-    {
-      "collapsed": true,
-      "type": "category",
       "label": "Repo",
       "items": [
         {
@@ -121,10 +110,6 @@
         {
           "type": "doc",
           "id": "version-1.1.0/testing"
-        },
-        {
-          "type": "doc",
-          "id": "version-1.1.0/labels"
         }
       ]
     }

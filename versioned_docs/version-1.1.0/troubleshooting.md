@@ -80,7 +80,7 @@ rm -rf node_modules yarn.lock
 
 ```bash
 # yarn
-yarn && yarn add react-native-Star System
+yarn && yarn add react-native-starsystem
 ```
 
 3. Install react-native-vector-icons

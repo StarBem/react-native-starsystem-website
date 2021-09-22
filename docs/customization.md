@@ -3,18 +3,18 @@ id: customization
 title: Customization
 ---
 
-Congrats! You've installed React Native Elements and your immediate question
+Congrats! You've installed React Native Star System and your immediate question
 goes something like this:
 
 > So umm, how do I change how it looks?
 
 Great question! A UI Kit wouldn't be that useful if the apps everyone built
-looked the same right? For this case React Native Elements provide a number of
+looked the same right? For this case React Native Star System provide a number of
 props on each component to enable you to style them how you want.
 
 ## Component Styles
 
-_Every_ component from React Native Elements has a container around it. The
+_Every_ component from React Native Star System has a container around it. The
 container is just a traditional `<View />` from react native that has some
 styling on it. This default styling prevents components from colliding with each
 other. If you want to change how two components react to each on the screen your
@@ -29,7 +29,7 @@ component to find out which style props it provides.
 While component styles are great for single use, you may want to have the same
 styling for every instance of a component. For example, you may want all your
 buttons to be blue or have the same font. Here are some ways to reuse styles
-with React Native Elements.
+with React Native Star System.
 
 ### Using Composition
 
@@ -37,8 +37,8 @@ With this approach, we create one component with the styles we want and use that
 instead of the built-in component.
 
 ```jsx
-import React from 'react';
-import { Button } from 'react-native-elements';
+import React from "react";
+import { Button } from "react-native-starsystem";
 
 const RaisedButton = (props) => <Button raised {...props} />;
 
@@ -57,12 +57,12 @@ normal `Button` just that it has the `raised` prop set by default.
 The previous solution works great for only one component, but imagine having to
 do this for every component you want custom styles for. That could get a bit
 tedious to manage. Thankfully, there's a better way to do this. React Native
-Elements ships with a 3 utilities for large-scale theming.
+Star System ships with a 3 utilities for large-scale theming.
 
 Firstly you'll want to set up your `ThemeProvider`.
 
 ```jsx
-import { ThemeProvider, Button } from 'react-native-elements';
+import { ThemeProvider, Button } from "react-native-starsystem";
 
 const theme = {
   Button: {
@@ -94,14 +94,14 @@ This is extremely convenient and is made possible through
 
 ### TypeScript Definitions (extending the default theme)
 
-TypeScript definitions for your theme can be extended by using TypeScript's [declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html) feature. First you need to create a declaration file called `react-native-elements.d.ts` and then declare the module `react-native-elements` and 're-export' the types that you want to extend.
+TypeScript definitions for your theme can be extended by using TypeScript's [declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html) feature. First you need to create a declaration file called `react-native-starsystem.d.ts` and then declare the module `react-native-starsystem` and 're-export' the types that you want to extend.
 
 i.e. below we add a custom p1Style to the Text theme object and we add a bunch of colors to the colors object.
 
 ```typescript
 type RecursivePartial<T> = { [P in keyof T]?: RecursivePartial<T[P]> };
 
-declare module 'react-native-elements' {
+declare module "react-native-starsystem" {
   export interface TextProps {
     p1Style: StyleProp<TextStyle>;
   }
@@ -140,12 +140,12 @@ Theme styles are the values that are set by the ThemeProvider If present, these
 are applied second.
 
 ```jsx
-import { ThemeProvider, Button } from 'react-native-elements';
+import { ThemeProvider, Button } from "react-native-starsystem";
 
 const theme = {
   Button: {
     titleStyle: {
-      color: 'red',
+      color: "red",
     },
   },
 };
@@ -167,12 +167,12 @@ External styles are the styles which are set through the component props. These
 are applied last and have the highest precedence.
 
 ```jsx
-import { ThemeProvider, Button } from 'react-native-elements';
+import { ThemeProvider, Button } from "react-native-starsystem";
 
 const theme = {
   Button: {
     titleStyle: {
-      color: 'red',
+      color: "red",
     },
   },
 };
@@ -180,7 +180,7 @@ const theme = {
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Button title="My Button" titleStyle={{ color: 'pink' }} />
+      <Button title="My Button" titleStyle={{ color: "pink" }} />
     </ThemeProvider>
   );
 };
@@ -247,7 +247,7 @@ Setting styles in the theme is as simple as using the name of the component, as
 a key and the props you want to change as the value.
 
 ```jsx
-import { ThemeProvider } from 'react-native-elements';
+import { ThemeProvider } from 'react-native-starsystem';
 
 const theme = {
   Avatar: {
@@ -267,7 +267,7 @@ const theme = {
 
 ### Dark Mode
 
-React Native Elements also provides a preset dark mode palette to get you started with using dark mode in your app.
+React Native Star System also provides a preset dark mode palette to get you started with using dark mode in your app.
 Use the prop `useDark` in `ThemeProvider` to set the default dark theme. You may want to set this by using a button,
 or by using the user's configured settings
 
@@ -290,9 +290,9 @@ this you can use the `withTheme` HOC exported from this library. It adds three
 props to the component it wraps - `theme`, `updateTheme` and `replaceTheme`.
 
 ```jsx
-import React from 'react';
-import { Text } from 'react-native';
-import { withTheme } from 'react-native-elements';
+import React from "react";
+import { Text } from "react-native";
+import { withTheme } from "react-native-starsystem";
 
 function MyComponent(props) {
   const { theme, updateTheme, replaceTheme } = props;
@@ -307,12 +307,12 @@ The `updateTheme` function merges the theme passed in with the current theme.
 ```jsx
 const theme = {
   colors: {
-    primary: 'pink',
+    primary: "pink",
   },
 };
 
 // We can update the primary color
-updateTheme({ colors: { primary: 'red' } });
+updateTheme({ colors: { primary: "red" } });
 ```
 
 The `replaceTheme` function merges the theme passed in with the default theme.
@@ -323,7 +323,7 @@ which uses render props!
 ```jsx
 import React from 'react';
 import { Text } from 'react-native';
-import { ThemeConsumer } from 'react-native-elements';
+import { ThemeConsumer } from 'react-native-starsystem';
 
 const MyComponent = () => (
   <ThemeConsumer>
@@ -337,9 +337,9 @@ const MyComponent = () => (
 You can also use `useTheme()` if you use hooks.
 
 ```jsx
-import React from 'react';
-import { Text } from 'react-native';
-import { useTheme } from 'react-native-elements';
+import React from "react";
+import { Text } from "react-native";
+import { useTheme } from "react-native-starsystem";
 
 const MyComponent = () => {
   const { theme } = useTheme();
@@ -355,9 +355,9 @@ const MyComponent = () => {
 If you want to keep your styles outside the component use `makeStyles()` (hook generator) to reference the `theme` and component props (optional param).
 
 ```jsx
-import React from 'react';
-import { Text } from 'react-native';
-import { makeStyles } from 'react-native-elements';
+import React from "react";
+import { Text } from "react-native";
+import { makeStyles } from "react-native-starsystem";
 
 type Params = {
   fullWidth?: boolean,
@@ -376,7 +376,7 @@ const MyComponent = (props: Props) => {
 const useStyles = makeStyles((theme, props: Props) => ({
   container: {
     background: theme.colors.white,
-    width: props.fullWidth ? '100%' : 'auto',
+    width: props.fullWidth ? "100%" : "auto",
   },
   text: {
     color: theme.colors.primary,
@@ -392,8 +392,8 @@ You may want to style your app using the native color palette. You can do this
 using the `colors` object and the `Platform` API.
 
 ```jsx
-import { Platform } from 'react-native';
-import { Button, colors, ThemeProvider } from 'react-native-elements';
+import { Platform } from "react-native";
+import { Button, colors, ThemeProvider } from "react-native-starsystem";
 
 const theme = {
   colors: {

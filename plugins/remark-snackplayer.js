@@ -1,14 +1,14 @@
-'use strict';
-const visit = require('unist-util-visit-parents');
-const u = require('unist-builder');
-const dedent = require('dedent');
-const fromEntries = require('object.fromentries');
+"use strict";
+const visit = require("unist-util-visit-parents");
+const u = require("unist-builder");
+const dedent = require("dedent");
+const fromEntries = require("object.fromentries");
 
-const parseParams = (paramString = '') => {
+const parseParams = (paramString = "") => {
   const params = fromEntries(new URLSearchParams(paramString));
 
   if (!params.platform) {
-    params.platform = 'web';
+    params.platform = "web";
   }
 
   return params;
@@ -20,22 +20,22 @@ const processNode = (node, parent) => {
       const params = parseParams(node.meta);
 
       // Gather necessary Params
-      const name = params.name ? decodeURIComponent(params.name) : 'Example';
+      const name = params.name ? decodeURIComponent(params.name) : "Example";
       const description = params.description
         ? decodeURIComponent(params.description)
-        : 'Example usage';
+        : "Example usage";
       const sampleCode = node.value;
       const encodedSampleCode = encodeURIComponent(sampleCode);
-      const dependencies = params.dependencies || 'react-native-elements';
-      const platform = params.platform || 'web';
-      const supportedPlatforms = params.supportedPlatforms || 'ios,android,web';
-      const theme = params.theme || 'light';
-      const preview = params.preview || 'true';
-      const loading = params.loading || 'lazy';
+      const dependencies = params.dependencies || "react-native-starsystem";
+      const platform = params.platform || "web";
+      const supportedPlatforms = params.supportedPlatforms || "ios,android,web";
+      const theme = params.theme || "light";
+      const preview = params.preview || "true";
+      const loading = params.loading || "lazy";
 
       // Generate Node for SnackPlayer
       // See https://github.com/expo/snack/blob/main/docs/embedding-snacks.md
-      const snackPlayerDiv = u('html', {
+      const snackPlayerDiv = u("html", {
         value: dedent`
           <div
             class="snack-player"
@@ -67,9 +67,9 @@ const SnackPlayer = () => {
     new Promise(async (resolve, reject) => {
       const nodesToProcess = [];
       // Parse all CodeBlocks
-      visit(tree, 'code', (node, parent) => {
+      visit(tree, "code", (node, parent) => {
         // Add SnackPlayer CodeBlocks to processing queue
-        if (node.lang == 'SnackPlayer') {
+        if (node.lang == "SnackPlayer") {
           nodesToProcess.push(processNode(node, parent));
         }
       });

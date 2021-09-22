@@ -4,9 +4,9 @@ title: Overview
 ---
 
 This section of the documentation describes the props and examples for all the
-components from React Native Elements. Please take some time and explore all of the components that are at your disposal!
+components from React Native Star System. Please take some time and explore all of the components that are at your disposal!
 
-## Using React Native Elements
+## Using React Native Star System
 
 The components in this library have a single theme running through them. From
 one central location, we can update the colours used in all components. While
@@ -15,10 +15,10 @@ way to use this feature.
 
 But why stop at colours? Why not allow the props of every component to be
 defined in one central place? And so the idea behind theming with React Native
-Elements was born!
+Star System was born!
 
 ```jsx
-import { Button, ThemeProvider } from 'react-native-elements';
+import { Button, ThemeProvider } from "react-native-starsystem";
 
 const MyApp = () => {
   return (

@@ -16,10 +16,7 @@ module.exports = {
   /* path to images for header/footer */
   favicon: "/img/website/logo.png",
   // This copyright info is used in /core/Footer.js and blog rss/atom feeds.
-  scripts: [
-    "https://buttons.github.io/buttons.js",
-    { src: "https://snack.expo.io/embed.js", defer: true },
-  ],
+  scripts: ["https://buttons.github.io/buttons.js"],
   plugins: [
     [
       "@docusaurus/plugin-client-redirects",
@@ -33,13 +30,9 @@ module.exports = {
       "@docusaurus/preset-classic",
       {
         docs: {
-          path: "docs",
           homePageId: "getting_started",
+          path: "docs",
           sidebarPath: require.resolve("./sidebars.json"),
-          remarkPlugins: [require("./plugins/remark-snackplayer")],
-          editUrl:
-            "https://github.com/react-native-elements/react-native-elements/edit/next/website/",
-          sidebarCollapsible: false,
         },
         theme: {
           customCss: require.resolve("./static/css/custom.css"),
@@ -59,17 +52,15 @@ module.exports = {
       },
       hideOnScroll: true,
       items: [
-        { to: "docs/", label: "Documentation", position: "right" },
+        { to: "docs/", label: "Docs", position: "right" },
+        { to: "docs/overview", label: "Components", position: "right" },
         {
           href: "https://github.com/StarBem/react-native-starsystem",
           label: "GitHub",
           position: "right",
         },
-        // { to: "help", label: "Help", position: "right" },
-        // { to: "blog", label: "Blog", position: "right" },
         {
           type: "docsVersionDropdown",
-
           position: "left",
           dropdownItemsAfter: [{ to: "versions", label: "All versions" }],
           // Do not add the link active class when browsing docs.
@@ -112,6 +103,10 @@ module.exports = {
         {
           title: "More",
           items: [
+            {
+              label: "Starbem",
+              to: "https://starbem.app",
+            },
             {
               label: "GitHub",
               to: "https://github.com/StarBem/react-native-starsystem",

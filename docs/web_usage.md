@@ -3,13 +3,13 @@ id: web_usage
 title: Usage on the Web
 ---
 
-React Native Elements just like on mobile can be used in your web projects. This is possible using [react-native-web](https://github.com/necolas/react-native-web). We'll highlight how to set this up using create-react-app.
+React Native Star System just like on mobile can be used in your web projects. This is possible using [react-native-web](https://github.com/necolas/react-native-web). We'll highlight how to set this up using create-react-app.
 
 ## Why do I have to set this up?
 
 On the web, you can usually use UI libraries directly from npm without any additional setup. However in react-native, it's a bit different.
 
-The major difference is that React Native can support JSX and advanced javascript out the box. This means that we don't need to transpile our code before we ship it to npm. **We ship JSX and advanced javascript directly to npm** in React Native Elements, so we need to account for this in our web projects.
+The major difference is that React Native can support JSX and advanced javascript out the box. This means that we don't need to transpile our code before we ship it to npm. **We ship JSX and advanced javascript directly to npm** in React Native Star System, so we need to account for this in our web projects.
 
 ## Create React App
 
@@ -18,7 +18,7 @@ The major difference is that React Native can support JSX and advanced javascrip
 After creating a new create-react-app project, run the following commands.
 
 ```bash
-yarn add react-native-elements react-native-web react-native-vector-icons
+yarn add react-native-starsystem react-native-web react-native-vector-icons
 ```
 
 ```bash
@@ -28,16 +28,16 @@ yarn add --dev @babel/plugin-proposal-class-properties customize-cra react-app-r
 Secondly, create a `config-overrides.js` file in the root of your project.
 
 ```js
-const path = require('path');
-const { override, addBabelPlugins, babelInclude } = require('customize-cra');
+const path = require("path");
+const { override, addBabelPlugins, babelInclude } = require("customize-cra");
 
 module.exports = override(
-  ...addBabelPlugins('@babel/plugin-proposal-class-properties'),
+  ...addBabelPlugins("@babel/plugin-proposal-class-properties"),
   babelInclude([
-    path.resolve(__dirname, 'node_modules/react-native-elements'),
-    path.resolve(__dirname, 'node_modules/react-native-vector-icons'),
-    path.resolve(__dirname, 'node_modules/react-native-ratings'),
-    path.resolve(__dirname, 'src'),
+    path.resolve(__dirname, "node_modules/react-native-starsystem"),
+    path.resolve(__dirname, "node_modules/react-native-vector-icons"),
+    path.resolve(__dirname, "node_modules/react-native-ratings"),
+    path.resolve(__dirname, "src"),
   ])
 );
 ```
@@ -45,7 +45,7 @@ module.exports = override(
 Also you should keep in mind that not all of React Native components are implemented for web-platform out-of-box.
 For example, `Modal` component is not yet implemented in `react-native-web`. Therefore, to use some of our components
 you may need to install additional third-party libraries that implement the missing functionality.
-For [`Overlay`](/main/Overlay.md) and [`Tooltip`](/main/Tooltip.md) components `Modal` implementation is required.
+For [`Overlay`](overlay.md) and [`Tooltip`](tooltip.md) components `Modal` implementation is required.
 
 Lastly, change your scripts in `package.json` to use react-app-rewired:
 
@@ -66,14 +66,14 @@ At this point your app can start. However trying to use any components that use 
 <style type="text/css">{`
   @font-face {
     font-family: 'MaterialIcons';
-    src: url(${require('react-native-vector-icons/Fonts/MaterialIcons.ttf')}) format('truetype');
+    src: url(${require("react-native-vector-icons/Fonts/MaterialIcons.ttf")}) format('truetype');
   }
 
   @font-face {
     font-family: 'FontAwesome';
-    src: url(${require('react-native-vector-icons/Fonts/FontAwesome.ttf')}) format('truetype');
+    src: url(${require("react-native-vector-icons/Fonts/FontAwesome.ttf")}) format('truetype');
   }
 `}</style>
 ```
 
-The full setup of the guide can be found at https://github.com/react-native-elements/create-react-app-example.
+The full setup of the guide can be found at https://github.com/StarBem/create-react-app-example.

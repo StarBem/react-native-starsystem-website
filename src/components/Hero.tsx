@@ -36,15 +36,6 @@ const Home: React.FunctionComponent<{}> = () => {
                   Get Started
                 </Link>
 
-                <Link
-                  className={
-                    "button button--secondary button--outline button--lg  margin-horiz--sm margin-vert--sm heroButton"
-                  }
-                  to={"https://react-native-elements.js.org/"}
-                >
-                  Playground 🚀
-                </Link>
-
                 <div className="bubble bubble-right gradient" />
               </div>
             </div>
@@ -62,52 +53,8 @@ const Home: React.FunctionComponent<{}> = () => {
         />
       </svg>
       <div className="bubble bubble-left gradient" />
-      <div className="container">
-        <div
-          className="snack-player"
-          data-snack-name="RN Star System Demo"
-          data-snack-code={demoCode}
-          data-snack-dependencies="react-native-starsystem"
-        />
-      </div>
     </>
   );
 };
 
 export default Home;
-
-const demoCode = `import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Button, Image, Text } from 'react-native-starsystem';
-
-const uri ='https://rne.gallerycdn.vsassets.io/extensions/rne/snippets/1.2.1/1622009552732/Microsoft.VisualStudio.Services.Icons.Default';
-
-const App = () => (
-  <View style={styles.box}>
-    <Image
-      source={{
-        uri,
-      }}
-      style={styles.image}
-    />
-    <Text h4 style={styles.text}>
-      Cross Platform React Native UI Toolkit
-    </Text>
-    <Button title="Getting Started" />
-  </View>
-);
-
-export default App;
-
-const styles = StyleSheet.create({
-  box: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flexGrow: 1,
-    padding: 20,
-  },
-  image: { width: 200, height: 200 },
-  text: { textAlign: 'center', fontWeight: 'bold' },
-});
-`;

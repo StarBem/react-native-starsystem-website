@@ -1,16 +1,16 @@
-import json2md from 'json2md';
-import _ from 'lodash';
+import json2md from "json2md";
+import _ from "lodash";
 
 json2md.converters.header = function (input) {
   return input.id
     ? json2md([
-        { hr: '' },
+        { hr: "" },
         { p: `id: ${input.id.toLowerCase()}` },
         { p: `title: ${input.id}` },
         { p: `slug: /${input.id.toLowerCase()}` },
-        { hr: '' },
+        { hr: "" },
       ])
-    : '';
+    : "";
 };
 
 function generateComponentsDescriptions(input) {
@@ -20,7 +20,7 @@ function generateComponentsDescriptions(input) {
           {
             link: {
               title: key,
-              source: `#${key.replace('.', '').toLowerCase()}`,
+              source: `#${key.replace(".", "").toLowerCase()}`,
             },
           },
           {
@@ -28,19 +28,19 @@ function generateComponentsDescriptions(input) {
           },
         ]);
       })
-    : '';
+    : "";
   return childComponentDescriptions;
 }
 
 json2md.converters.components = function (input) {
   if (input.childrens) {
-    let markdown = json2md({ h2: 'Components' });
+    let markdown = json2md({ h2: "Components" });
     markdown += json2md({
       ul: generateComponentsDescriptions(input.childrens),
     });
     return markdown;
   } else {
-    return '';
+    return "";
   }
 };
 
@@ -51,7 +51,7 @@ json2md.converters.imports = function (input) {
           p: `import Usage from './usage/${input.component}/${input.component}.md'`,
         },
       ])
-    : '';
+    : "";
 };
 
 json2md.converters.usage = function (input) {
@@ -60,7 +60,7 @@ json2md.converters.usage = function (input) {
     {
       p: `<Usage />`,
     },
-    { hr: '' },
+    { hr: "" },
   ]);
 };
 
@@ -71,13 +71,13 @@ function generatePropsLinks(props) {
           link: { title: key, source: `#${key.toLowerCase()}` },
         });
       })
-    : '';
+    : "";
   return propLinks;
 }
 
 json2md.converters.props = function (input) {
   let markdown = json2md([
-    { h2: 'Props' },
+    { h2: "Props" },
     { h3: input.displayName },
     { ul: generatePropsLinks(input.props) },
   ]);
@@ -88,11 +88,11 @@ json2md.converters.props = function (input) {
         return json2md([
           { h3: key },
           _.isEmpty(props)
-            ? { p: 'None' }
+            ? { p: "None" }
             : { ul: generatePropsLinks(input.childrens[key].props) },
         ]);
       })
-      .join('');
+      .join("");
   }
   return markdown;
 };
@@ -108,24 +108,24 @@ function generatePropsReference(props) {
           { p: prop.description },
           {
             table: {
-              headers: ['Type', 'Default'],
+              headers: ["Type", "Default"],
               rows: [
                 {
-                  Type: prop.type ? prop.type.name : 'None',
-                  Default: prop.defaultValue ? prop.defaultValue.value : 'None',
+                  Type: prop.type ? prop.type.name : "None",
+                  Default: prop.defaultValue ? prop.defaultValue.value : "None",
                 },
               ],
             },
           },
-          { hr: '' },
+          { hr: "" },
         ]);
       })
-      .join('');
+      .join("");
   return propsReference;
 }
 
 json2md.converters.propsData = function (input) {
-  let markdown = json2md([{ h2: 'Reference' }, { h3: input.displayName }]);
+  let markdown = json2md([{ h2: "Reference" }, { h3: input.displayName }]);
   markdown += generatePropsReference(input.props);
   if (input.childrens) {
     markdown += Object.keys(input.childrens)
@@ -134,11 +134,11 @@ json2md.converters.propsData = function (input) {
         return (
           json2md([{ h3: key }]) +
           (_.isEmpty(props)
-            ? json2md({ p: 'None' })
+            ? json2md({ p: "None" })
             : generatePropsReference(props))
         );
       })
-      .join('');
+      .join("");
   }
   return markdown;
 };
@@ -157,7 +157,7 @@ export const generateMarkdown = (data) => {
         childrens: data.childrens,
       },
     },
-    { usage: '' },
+    { usage: "" },
     { props: data },
     { propsData: data },
   ]);

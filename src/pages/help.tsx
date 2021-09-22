@@ -1,5 +1,5 @@
-import React from 'react';
-import Layout from '@theme/Layout';
+import React from "react";
+import Layout from "@theme/Layout";
 
 const Help: React.FunctionComponent<{}> = (props) => {
   type SupportLinkTypes = {
@@ -11,23 +11,16 @@ const Help: React.FunctionComponent<{}> = (props) => {
 
   const supportLinks: SupportLinkTypes[] = [
     {
-      content: 'Learn more using the ',
-      title: 'Browse Docs',
-      link: 'documentation on this site.',
-      href: 'docs',
-    },
-    {
-      content: 'Ask questions about the documentation and project in our ',
-      title: 'Join the community',
-      link: 'Slack.',
-      href: 'https://react-native-elements-slack.herokuapp.com',
+      content: "Learn more using the ",
+      title: "Browse Docs",
+      link: "documentation on this site.",
+      href: "docs",
     },
     {
       content: `Find out what's new for each release by checking the `,
-      title: 'Stay up to date',
-      link: 'releases tab on the GitHub repo.',
-      href:
-        'https://github.com/react-native-elements/react-native-elements/releases',
+      title: "Stay up to date",
+      link: "releases tab on the GitHub repo.",
+      href: "https://github.com/StarBem/react-native-starsystem/releases",
     },
   ];
 
@@ -56,24 +49,25 @@ const Help: React.FunctionComponent<{}> = (props) => {
         </header>
         <p>
           Even with the great documentation, you're likely to get stuck at some
-          point. If you've encountered a bug with React Native Elements, please{' '}
+          point. If you've encountered a bug with React Native Star System,
+          please{" "}
           <a
-            href="https://github.com/react-native-elements/react-native-elements/issues/new/choose"
+            href="https://github.com/StarBem/react-native-starsystem/issues/new/choose"
             target="_blank"
             rel="noopener noreferrer"
           >
             post an issue
-          </a>{' '}
+          </a>{" "}
           and one of our maintainers will happily reach out to you. No
           question's too silly to ask but we recommend checking the
-          documentation and{' '}
+          documentation and{" "}
           <a
-            href="https://github.com/react-native-elements/react-native-elements/issues"
+            href="https://github.com/StarBem/react-native-starsystem/issues"
             target="_blank"
             rel="noopener noreferrer"
           >
             existing issues
-          </a>{' '}
+          </a>{" "}
           before opening and a new one.
         </p>
         <div>
