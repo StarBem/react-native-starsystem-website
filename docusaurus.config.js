@@ -8,7 +8,7 @@
 module.exports = {
   title: "React Native Star System" /* title for your website */,
   tagline: "Cross Platform React Native UI Toolkit by Starbem",
-  url: "https://starsystem.starbem.app/react-native" /* your website url */,
+  url: "https://starsystem.starbem.app" /* your website url */,
   baseUrl: "/" /* base url for your project */,
   projectName: "starsystem",
   organizationName: "Starbem",
@@ -78,9 +78,9 @@ module.exports = {
         },
       ],
     },
-    googleAnalytics: {
-      trackingID: "",
-    },
+    // googleAnalytics: {
+    //   trackingID: "",
+    // },
     footer: {
       style: "dark",
       logo: {
