@@ -21,7 +21,7 @@ const Home: React.FunctionComponent<{}> = () => {
                 <p className="margin-vert--md margin-horiz--md">
                   <pre>$ npm install react-native-starsystem</pre>
                   <p>ou</p>
-                  <pre>$ yarn add react-native-starsytem</pre>
+                  <pre>$ yarn add react-native-starsystem</pre>
                 </p>
 
                 <b>2. Import the component and use it in your project</b>
