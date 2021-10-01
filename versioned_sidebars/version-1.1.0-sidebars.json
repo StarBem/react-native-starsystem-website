@@ -34,6 +34,18 @@
       "items": [
         {
           "type": "doc",
+          "id": "version-1.1.0/animatedView"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.1.0/animatedImage"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.1.0/animatedText"
+        },
+        {
+          "type": "doc",
           "id": "version-1.1.0/avatar"
         },
         {
@@ -55,6 +67,10 @@
         {
           "type": "doc",
           "id": "version-1.1.0/checkbox"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.1.0/contentBox"
         },
         {
           "type": "doc",

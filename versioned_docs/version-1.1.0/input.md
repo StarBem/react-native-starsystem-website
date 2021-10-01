@@ -9,14 +9,7 @@ Inputs allow users to enter text into a UI. They typically appear in forms and
 dialogs.
 
 <div className="component-preview component-preview--grid">
-  <figure>
-    <img src="/img/input/input--placeholder.png" alt="Input with placeholder" />
-    <figcaption>Placeholder</figcaption>
-  </figure>
-  <figure>
-  <img src="/img/input/input--label.png" alt="Input with Label and icons" />
-    <figcaption>Label with Icons</figcaption>
-  </figure>
+  <img src="/img/inputs.png" alt="Input with placeholder" />
 </div>
 
 ## Usage

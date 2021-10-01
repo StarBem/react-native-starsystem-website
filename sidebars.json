@@ -8,6 +8,9 @@
       "troubleshooting"
     ],
     "Components": [
+      "animatedView",
+      "animatedImage",
+      "animatedText",
       "avatar",
       "badge",
       "bottomsheet",
@@ -15,6 +18,7 @@
       "button_group",
       "card",
       "checkbox",
+      "contentBox",
       "chip",
       "divider",
       "fab",
