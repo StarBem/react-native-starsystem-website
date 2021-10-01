@@ -3,27 +3,23 @@ id: animatedImage
 title: AnimatedImage
 ---
 
-import Props from './props/animatedImage.md'
+import Props from './props/animatedView.md'
 
-Dividers are visual separators of content. Use Divider when you want to make a
-distinction between sections of content.
+Declarative transitions and animations for React Native Image
 
 ## Usage
 
 ```js
-import { Divider } from "react-native-starsystem";
+import { View } from "react-native";
+import { AnimatedImage, Image } from "react-native-starsystem";
 
-<Divider orientation="horizontal" />;
-
-<Divider orientation="vertical" width={5} />;
-
-<Divider inset={true} insetType="middle" />;
-
-<Divider
-  orientation="horizontal"
-  subHeader="Test"
-  subHeaderStyle={{ color: "blue" }}
-/>;
+const Example = () => {
+  return (
+    <AnimatedImage animation="fadeIn">
+      <Image source="" />
+    </AnimatedImage>
+  );
+};
 ```
 
 ---
