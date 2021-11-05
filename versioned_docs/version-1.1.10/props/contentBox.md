@@ -7,6 +7,7 @@
 - [`centerContent`](#centerContent)
 - [`bottomContent`](#bottomContent)
 - [`animations`](#animations)
+- [`style`](#style)
 
 ---
 
@@ -49,3 +50,13 @@ Declarative transitions and animations
 |                     Type                     | Default |
 | :------------------------------------------: | :-----: |
 | {[...Animated props](animatedView.md#props)} |  none   |
+
+---
+
+### `style`
+
+Style of the contentBox
+
+|        Type         | Default |
+| :-----------------: | :-----: |
+| View style (object) |   {}    |
